@@ -21,7 +21,7 @@ class EchoBot {
                 if(DBName){
                     if(CollectionName){
                         CollectionFields = JSON.parse(context.activity.text);
-                        if(typeof CollectionFields == 'object')
+                        if(typeof CollectionFields === 'object')
                         {   
                             let modelSchema = {} ;
                             console.log("The record entered is : " , CollectionFields );
@@ -48,8 +48,6 @@ class EchoBot {
                             // Get all records
                             .then(() => broker.call(CollectionName + ".find").then(console.log));
                         }
-                        else
-                            console.log("Validation Error : Please Enter Json Object of fields for the collection :");
                     }
                     else{
                         CollectionName = context.activity.text ;

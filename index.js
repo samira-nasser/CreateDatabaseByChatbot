@@ -18,15 +18,17 @@ console.log(
 
 adapter.listen(async (context) => {
     bot.onTurn(context)
-    .then(function(response){
-        // console.log("Response" , response);
-        
+    .then(function(response){        
         if(response == 1)
             console.log("Please Enter Collection Name :");
         if(response == 2)
             console.log("Please Enter Json Object of fields of collection :");
+        if(response == undefined)
+            console.log("Validation Error : Please Enter Json Object of fields for the collection :");
     })
     .catch(function(error){
+        console.log("Validation Error : Please Enter Json Object of fields for the collection :");
+
         return error ;
     })
     
